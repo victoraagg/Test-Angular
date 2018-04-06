@@ -1,0 +1,14 @@
+<h1>Search results of: {{term}}</h1>
+<div class="card-columns">
+  <div class="card" *ngFor="let heroe of heroes; let i = index">
+    <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
+    <div class="card-body">
+      <h5 class="card-title">{{heroe.nombre}}</h5>
+      <p class="card-text">{{heroe.bio}}</p>
+      <a [routerLink]="['/heroe',i]" class="btn btn-primary">Ver</a>
+      <button (click)="verHeroe(i)" class="btn btn-success">Ver con link</button>
+      <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+    </div>
+  </div>
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="heroes.length==0">No hemos encontrado Heroes con el término: {{term}}</div>
