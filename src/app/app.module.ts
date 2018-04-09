@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 //Routes
 import { APP_ROUTING } from './app.routes';
@@ -16,6 +16,15 @@ import { HomeComponent } from './components/home/home.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { SearchComponent } from './components/search/search.component';
 
+//Pipes
+import { AppendTextPipe } from './pipes/appendtext.pipe';
+import { HideTextPipe } from './pipes/hidetext.pipe';
+
+//Set Locale
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,14 +33,17 @@ import { SearchComponent } from './components/search/search.component';
     AboutComponent,
     HeroesComponent,
     HeroeComponent,
-    SearchComponent
+    SearchComponent,
+    AppendTextPipe,
+    HideTextPipe
   ],
   imports: [
     BrowserModule,
     APP_ROUTING
   ],
   providers: [
-    HeroesService
+    HeroesService,
+    { provide: LOCALE_ID, useValue: 'es' }
   ],
   bootstrap: [AppComponent]
 })

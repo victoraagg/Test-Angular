@@ -1,5 +1,91 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">About component</h1>
+    <hr>
+    <h2>List of Pipes</h2>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Variable</th>
+          <th scope="col">Pipe</th>
+          <th scope="col">Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{name}}</td>
+          <td>uppercase</td>
+          <td>{{name|uppercase}}</td>
+        </tr>
+        <tr>
+          <td>{{name}}</td>
+          <td>lowercase</td>
+          <td>{{name|lowercase}}</td>
+        </tr>
+        <tr>
+          <td>{{name}}</td>
+          <td>slice:3</td>
+          <td>{{name|slice:3}}</td>
+        </tr>
+        <tr>
+          <td>{{name}}</td>
+          <td>slice:0:3</td>
+          <td>{{name|slice:4:11}}</td>
+        </tr>
+        <tr>
+          <td>{{PI}}</td>
+          <td>number</td>
+          <td>{{PI|number}}</td>
+        </tr>
+        <tr>
+          <td>{{PI}}</td>
+          <td>number:'1.0-5'</td>
+          <td>{{PI|number:'1.0-5'}}</td>
+        </tr>
+        <tr>
+          <td>{{number}}</td>
+          <td>percent</td>
+          <td>{{number|percent}}</td>
+        </tr>
+        <tr>
+          <td>{{number}}</td>
+          <td>percent:'2.2-2'</td>
+          <td>{{number|percent:'2.2-2'}}</td>
+        </tr>
+        <tr>
+          <td>{{currency}}</td>
+          <td>currency:'EUR':true</td>
+          <td>{{currency|currency:'EUR':true}}</td>
+        </tr>
+        <tr>
+          <td>{{object}}</td>
+          <td>json</td>
+          <td>{{object|json}}</td>
+        </tr>
+        <tr>
+          <td>{{promise}}</td>
+          <td>async</td>
+          <td>{{promise|async}}</td>
+        </tr>
+        <tr>
+          <td>{{date}}</td>
+          <td>date</td>
+          <td>{{date|date:'dd MMMM, y'}}</td>
+        </tr>
+        <tr>
+          <td>{{name}}</td>
+          <td>appendtext:'test param'</td>
+          <td>{{name|appendtext:'test param'}}</td>
+        </tr>
+        <tr>
+          <td>{{name}}</td>
+          <td>
+            <p>Estado: {{active}}</p>
+            <button class="btn" (click)="active = !active">Activar/Desactivar</button>
+          </td>
+          <td>{{name | hidetext:active}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
