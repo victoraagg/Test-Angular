@@ -23,6 +23,7 @@ import { HideTextPipe } from './pipes/hidetext.pipe';
 //Set Locale
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
+import { HideTextDirective } from './directives/hide-text.directive';
 registerLocaleData(localeEs);
 
 @NgModule({
@@ -35,7 +36,8 @@ registerLocaleData(localeEs);
     HeroeComponent,
     SearchComponent,
     AppendTextPipe,
-    HideTextPipe
+    HideTextPipe,
+    HideTextDirective
   ],
   imports: [
     BrowserModule,

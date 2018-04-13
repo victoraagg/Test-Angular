@@ -10,6 +10,9 @@ import { HeroesService, Heroe } from '../../services/heroes.service';
 export class HeroeComponent implements OnInit {
 
   heroe:any = {};
+  sizeFont:number = 12;
+  alert:boolean;
+  alertLevel:number = 100;
 
   constructor(private activatedRoute:ActivatedRoute, private heroesService:HeroesService) {
     this.activatedRoute.params.subscribe(params => this.heroe = this.heroesService.getHeroe(params['id']));
