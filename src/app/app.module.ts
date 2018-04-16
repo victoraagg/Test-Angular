@@ -24,6 +24,9 @@ import { HideTextPipe } from './pipes/hidetext.pipe';
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { HideTextDirective } from './directives/hide-text.directive';
+import { LeftComponent } from './components/home/left.component';
+import { CenterComponent } from './components/home/center.component';
+import { RightComponent } from './components/home/right.component';
 registerLocaleData(localeEs);
 
 @NgModule({
@@ -37,7 +40,10 @@ registerLocaleData(localeEs);
     SearchComponent,
     AppendTextPipe,
     HideTextPipe,
-    HideTextDirective
+    HideTextDirective,
+    LeftComponent,
+    CenterComponent,
+    RightComponent
   ],
   imports: [
     BrowserModule,

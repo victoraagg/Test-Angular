@@ -4,3 +4,30 @@
     <p class="lead">This is a practise about Angular.</p>
   </div>
 </div>
+
+<label for="">Type some CSS class to change alert label</label>
+<input class="form-control" #textbox type="text" (keyup.enter)="changeLabel(textbox.value)" required>
+<hr>
+<div [ngSwitch]="label">
+  <div *ngSwitchCase="'success'" class="alert alert-success" role="alert">
+    <strong>Label done!</strong> success
+  </div>
+  <div *ngSwitchCase="'info'" class="alert alert-info" role="alert">
+    <strong>Label done!</strong> info
+  </div>
+  <div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert">
+    <strong>Label done!</strong> warning
+  </div>
+  <div *ngSwitchDefault class="alert alert-info" role="alert">
+    <strong>CSS undefined</strong> class
+    </div>
+</div>
+
+<h3>Example sub-routes</h3>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary" [routerLink]="['left']">Left</button>
+  <button type="button" class="btn btn-secondary" [routerLink]="['center']">Center</button>
+  <button type="button" class="btn btn-secondary" [routerLink]="['right']">Right</button>
+</div>
+
+<router-outlet></router-outlet>
